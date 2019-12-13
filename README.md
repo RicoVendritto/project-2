@@ -9,11 +9,11 @@
 ## Wireframes: ##
 
 #### Landing Page ####
-![wireframe1](./resources/LANDING-PAGE.jpg)
+![wireframe1](./beer-app/resources/LANDING-PAGE.jpg)
 Landing page. Should be mostly CSS + Images. At least 2 buttons at the bottom underneath the logo that lets you choose between >=21 || <21 before you can continue to the website. Possibly, I could create an alternative route for the <21 button that leads you to another page that educates on the use of alcohol...... 
 
 #### Home Page ####
-![wireframe2](./resources/HOME-PAGE.jpg)
+![wireframe2](./beer-app/resources/HOME-PAGE.jpg)
 The homepage is going to contain a header / main / footer section. Within the header I want to create the navigation bar that contains the Link elements for the Route function. And since this will be on every page it allows you to navigate through the site. 
 
 The main element is going to contain approximately 8 div elements that function as buttons. Most likely displayed within a GRID of 4 x 2. Which should make it easier to make it mobile friendly / responsive and adjust in the @Media queries. The buttons are going to provide various search options. Search for (examples): 
@@ -32,17 +32,17 @@ As soon you click on one of the buttons it will Route you to a Search Page that 
 The footer will not contain much. I might use this for the stretch goals, more information below. 
 
 #### Search Page ####
-![wireframe3](./resources/SEARCH-PAGE.jpg)
+![wireframe3](./beer-app/resources/SEARCH-PAGE.jpg)
 The search page will contain only a search button that is being triggered by the enter button and return the search query. I want to make sure that in case multiple results are being returned, you are able to click on a brewery and see detailed information. 
 
 ## API: ##
 ### Beer look-up / information functionality ###
-![punkapi](./resources/PUNK-API.png)
+![punkapi](./beer-app/resources/PUNK-API.png)
 API: https://punkapi.com/
 Endpoint: https://api.punkapi.com/v2/
 
 ### Brewery look-up / information functionality ###
-![openbrewery](./resources/OPEN-BREWERY-API.png)
+![openbrewery](./beer-app/resources/OPEN-BREWERY-API.png)
 API: https://www.openbrewerydb.org/
 Endpoint: https://api.openbrewerydb.org/breweries
 
@@ -50,14 +50,14 @@ Endpoint: https://api.openbrewerydb.org/breweries
 Both API's do not require an API key and are easily accessible. Therefore, I do not foresee any problems. Below are two example results that can just be run in the browser. 
 
 #### Punk-Api ####
-![output api](./resources/PUNK-API-RESULTS.png)
+![output api](./beer-app/resources/PUNK-API-RESULTS.png)
 
 #### Open-Brewery-Api ####
-![output api](./resources/OPEN-BREWERY-API-RESULTS.png)
+![output api](./beer-app/resources/OPEN-BREWERY-API-RESULTS.png)
 
 ## LOGO ##
 ### Font Awesome ###
-![fontawesome](./resources/FA-LOGO.png)
+![fontawesome](./beer-app/resources/FA-LOGO.png)
 Additional styling with logos from Font Awesome
 
 ## Features: ##
