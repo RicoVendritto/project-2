@@ -1,10 +1,11 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./App.css";
 
 //Custom Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Landing from "./components/Landing";
+import Main from "./components/Main";
 
 class App extends Component {
   constructor(props) {
@@ -16,24 +17,21 @@ class App extends Component {
 
   ageValidation = (e, boolean) => {
     e.preventDefault();
-    console.log("TEST AGE VALIDATION");
-    console.log(boolean);
     this.setState({
       ageCheck: boolean
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <div className="App">
         {!this.state.ageCheck ? (
-          <Landing
-            ageValidation={this.ageValidation}
-          />
+          <Landing ageValidation={this.ageValidation} />
         ) : (
           <div>
             <Header />
             <h1>We're up and running!</h1>
+            <Main />
             <Footer />
           </div>
         )}
