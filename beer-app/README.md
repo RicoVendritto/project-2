@@ -75,6 +75,7 @@ Display:
 - Use local storage to save choice >= 21 / 21 and prevents landing page if you visit again.
 - Add the cocktail api to extend the search options! Because, why not. It's alcohol as well. (https://www.thecocktaildb.com/api.php)
 - Use the weather API to check for the current weather at your location. Not sure if possible, but otherwise, use location of user / device to determine weather forecast. And make suggestion if today is a great day to drink beer :-) This should all be incorporated in the Footer and visible on every page to promote drinking. 
+- Vote on your favourite beer / Favourite beer list. 
 
 ## Technology / Resources used: ##
 - React
