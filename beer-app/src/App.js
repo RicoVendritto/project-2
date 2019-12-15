@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 
+//Api calls
+
 //Custom Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";

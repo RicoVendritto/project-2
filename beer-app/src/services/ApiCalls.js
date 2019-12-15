@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { geolocated } from "react-geolocated";
 
 const apiUrl = "https://api.punkapi.com/v2/beers";
 const apiBrewery = "https://api.openbrewerydb.org/breweries";

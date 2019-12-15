@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { geolocated } from "react-geolocated";
 
-class Demo extends Component {
+class Location extends Component {
   render() {
     return !this.props.isGeolocationAvailable ? (
       <div>Your browser does not support Geolocation</div>
@@ -43,4 +43,4 @@ export default geolocated({
     enableHighAccuracy: false
   },
   userDecisionTimeout: 5000
-})(Demo);
+})(Location);

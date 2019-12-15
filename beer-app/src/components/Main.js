@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Custom components
-import Demo from "./Location";
+import Location from "./Location";
 
 //Api component
 import { beerApi, breweryApi } from "../services/ApiCalls";
@@ -22,7 +22,7 @@ class Main extends Component {
   render() {
     return (
       <main>
-        <Demo />
+        <Location />
       </main>
     );
   }
