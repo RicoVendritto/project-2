@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 //Custom components
 import SearchOptions from "./SearchOptions";
@@ -25,17 +25,18 @@ class Main extends Component {
     this.state = {
       search: "",
       results: "",
-      apiDataLoaded: false
+      apiDataLoaded: false,
+      key: ''
     };
   }
 
   handleChange = e => {
-    console.log(e.target.value);
     const name = e.target.name;
-    const value = e.target.value;
+    let value = e.target.value;
+    value = value.split(" ").join("_");
     this.setState({
       [name]: value
-    })
+    });
   };
 
   handleSubmit = async (e, key) => {
@@ -46,64 +47,69 @@ class Main extends Component {
     switch (key) {
       case "bbn":
         results = await beerName(search);
-        this.submit(results);
+        this.submit(results, key);
         break;
       case "abv":
         results = await abvApi(search);
-        this.submit(results);
+        this.submit(results, key);
         break;
       case "ibv":
         results = await ibuApi(search);
-        this.submit(results);
+        this.submit(results, key);
         break;
       case "ebc":
         results = await ebcApi(search);
-        this.submit(results);
+        this.submit(results, key);
         break;
       case "rbg":
         results = await randomBeer();
-        this.submit(results);
+        this.submit(results, key);
         break;
       case "baf":
         results = await foodBeerApi(search);
-        this.submit(results);
+        this.submit(results, key);
         break;
       case "brn":
-        results = await breweryCity(search);
-        this.submit(results);
+        results = await breweryName(search);
+        this.submit(results, key);
         break;
       case "brc":
-        results = await breweryName(search);
-        this.submit(results);
+        results = await breweryCity(search);
+        this.submit(results, key);
         break;
       default:
         console.log("Damn that went wrong man!");
     }
   };
 
-  submit = (results) => {
+  submit = (results, key) => {
     this.setState({
       results,
+      key,
       apiDataLoaded: true
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <main>
-        <Route exact path="/home" render={() => <Home />} />
-        <Route path="/searchOptions" render={() => <SearchOptions />} />
-        <Route
-          path="/search/:slug"
-          render={props => (
-            <Search
-              props={props}
-              handleSubmit={this.handleSubmit}
-              handleChange={this.handleChange}
-            />
-          )}
-        />
-        {this.state.apiDataLoaded && <Results results={this.state.results} />}
+        <Switch>
+          <Route exact path="/home" render={() => <Home />} />
+          <Route path="/searchOptions" render={() => <SearchOptions />} />
+          <Route
+            path="/search/:slug"
+            render={props => (
+              <Search
+                props={props}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                results={this.state.results}
+                apiDataLoaded={this.state.apiDataLoaded}
+              />
+            )}
+          />
+        </Switch>
+        
       </main>
     );
   }
