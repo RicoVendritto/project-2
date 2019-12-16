@@ -1,10 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-{
-  /* <Link to={"Profile/"+hero.hero_id} slug={hero.id}>Profile Info</Link> */
-}
-
 const SearchOptions = () => {
   return (
     <div className="searchContainer">
