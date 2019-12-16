@@ -1,15 +1,29 @@
 import React from "react";
 
 const Results = props => {
+  console.log(props);
   const results = props.results.data;
-  return results.map((result, index) => (
-    <div key={index}>
-      <h2>{result.name}</h2>
-      <h4>{result.tagline}</h4>
-      <p>{result.description}</p>
-      <img src={result.image_url} alt="Beer Image" />
+  const slug = props.slug;
+  return (
+    <div className="results">
+      {slug === "brn" || slug === "brc" ? (
+        <div className="breweryResults">Hello Brewery</div>
+      ) : (
+        <div className="beerResults">
+          {results.map((result, index) => (
+            <div key={index} className="indResults">
+              <h2>{result.name}</h2>
+              <h4>{result.tagline}</h4>
+              <p>{result.description}</p>
+              <img src={result.image_url} alt="Beer Image" />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
-  ));
-}
+  );
+};
 
 export default Results;
+
+//brn brc
