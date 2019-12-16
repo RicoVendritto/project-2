@@ -1,10 +1,23 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
 //Custom components
 import SearchOptions from "./SearchOptions";
+import Search from "./Search";
 
 //Api component
-import { beerApi, breweryApi, beerName, abvApi, ibuApi, ebcApi, randomBeer, foodBeerApi, breweryCity, breweryName } from "../services/ApiCalls";
+import {
+  beerApi,
+  breweryApi,
+  beerName,
+  abvApi,
+  ibuApi,
+  ebcApi,
+  randomBeer,
+  foodBeerApi,
+  breweryCity,
+  breweryName
+} from "../services/ApiCalls";
 
 class Main extends Component {
   constructor(props) {
@@ -38,7 +51,11 @@ class Main extends Component {
   render() {
     return (
       <main>
-        <SearchOptions />
+        <Route path="/searchOptions" render={() => <SearchOptions />} />
+        <Route
+          path="/search/:slug"
+          render={props => <Search props={props} />}
+        />
       </main>
     );
   }
