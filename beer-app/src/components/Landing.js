@@ -2,7 +2,7 @@ import React from "react";
 
 const Landing = props => {
   return (
-    <div>
+    <div className="landingPage">
       <h1>Landing Page</h1>
       <button onClick={e => props.ageValidation(e, false)}>
         I'm younger than 21
