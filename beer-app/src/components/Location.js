@@ -18,7 +18,7 @@ class Location extends Component {
             <td>longitude</td>
             <td>{this.props.coords.longitude}</td>
           </tr>
-          <tr>
+          {/* <tr>
             <td>altitude</td>
             <td>{this.props.coords.altitude}</td>
           </tr>
@@ -29,7 +29,7 @@ class Location extends Component {
           <tr>
             <td>speed</td>
             <td>{this.props.coords.speed}</td>
-          </tr>
+          </tr> */}
         </tbody>
       </table>
     ) : (
