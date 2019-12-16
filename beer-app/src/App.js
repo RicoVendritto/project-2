@@ -32,7 +32,6 @@ class App extends Component {
         ) : (
           <div>
             <Header />
-            <h1>We're up and running!</h1>
             <Main />
             <Footer />
           </div>

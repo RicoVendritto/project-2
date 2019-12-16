@@ -1,0 +1,44 @@
+* {
+  border: .5px solid red;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: fixed;
+  left: 0;
+  top: 0;
+  height: 5vh;
+  background-color: darkgray;
+  color: white;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+.searchContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.searchOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 5vh 0;
+  height: 5vh;
+  background-color: darkgray;
+  color: white;
+}
