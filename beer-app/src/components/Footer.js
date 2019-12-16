@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
+
+//Custom components
+import Location from "./Location";
 
 const Footer = () => {
   return (
-    <div>FOOTER</div>
-  )
-}
+    <footer>
+      <div>FOOTER</div>
+      <Location />
+    </footer>
+  );
+};
 
 export default Footer;
