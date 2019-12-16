@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const apiUrl = "https://api.punkapi.com/v2/beers";
 const beerSearch = "?beer_name=";
@@ -9,7 +9,7 @@ const foodSearch = "?food=";
 const randomSearch = "https://api.punkapi.com/v2/beers/random";
 const apiBrewery = "https://api.openbrewerydb.org/breweries";
 const nameBrewery = "?by_name=";
-const cityBrewery = "?by_city="
+const cityBrewery = "?by_city=";
 
 export async function beerApi(props) {
   const results = await axios(apiUrl);
