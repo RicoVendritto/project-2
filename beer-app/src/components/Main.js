@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 //Custom components
 import SearchOptions from "./SearchOptions";
 import Search from "./Search";
+import Home from "./Home";
 
 //Api component
 import {
@@ -48,13 +49,50 @@ class Main extends Component {
     console.log(result0);
   };
 
+  handleSubmit = (e, search) => {
+    e.preventDefault();
+    console.log("HELLO WORLD");
+    console.log(search);
+    switch (search) {
+      case "bbn":
+        console.log("BBN");
+        break;
+      case "abv":
+        console.log("ABV");
+        break;
+      case "ibv":
+        console.log("IBV");
+        break;
+      case "ebc":
+        console.log("EBC");
+        break;
+      case "rbg":
+        console.log("RBG");
+        break;
+      case "baf":
+        console.log("BAF");
+        break;
+      case "brn":
+        console.log("BRN");
+        break;
+      case "brg":
+        console.log("BRG");
+        break;
+      default:
+        console.log("Damn that went wrong man!");
+    }
+  };
+
   render() {
     return (
       <main>
+        <Route exact path="/home" render={() => <Home />} />
         <Route path="/searchOptions" render={() => <SearchOptions />} />
         <Route
           path="/search/:slug"
-          render={props => <Search props={props} />}
+          render={props => (
+            <Search props={props} handleSubmit={this.handleSubmit} />
+          )}
         />
       </main>
     );
