@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const Search = () => {
-  return (
-    <div>SEARCH</div>
-  )
-}
+const Search = props => {
+  console.log(props.props.match.params.slug);
+  return <div>SEARCH</div>;
+};
 
 export default Search;
