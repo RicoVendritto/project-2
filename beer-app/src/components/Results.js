@@ -1,9 +1,7 @@
 import React from "react";
 
 const Results = props => {
-  console.log(props.results.data);
   const results = props.results.data;
-  console.log(results);
   return results.map((result, index) => (
     <div key={index}>
       <h2>{result.name}</h2>
