@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import SearchOptions from "./SearchOptions";
 import Search from "./Search";
 import Home from "./Home";
+import Results from "./Results";
 
 //Api component
 import {
@@ -23,7 +24,10 @@ import {
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      results: '',
+      apiDataLoaded: false
+    };
   }
 
   componentDidMount = async () => {
@@ -49,7 +53,7 @@ class Main extends Component {
     console.log(result0);
   };
 
-  handleSubmit = (e, search) => {
+  handleSubmit = async (e, search) => {
     e.preventDefault();
     console.log("HELLO WORLD");
     console.log(search);
@@ -68,6 +72,11 @@ class Main extends Component {
         break;
       case "rbg":
         console.log("RBG");
+        const results = await randomBeer();
+        this.setState({
+          results,
+          apiDataLoaded: true
+        })
         break;
       case "baf":
         console.log("BAF");
@@ -94,6 +103,7 @@ class Main extends Component {
             <Search props={props} handleSubmit={this.handleSubmit} />
           )}
         />
+        {this.state.apiDataLoaded && <Results results={this.state.results} />}
       </main>
     );
   }
