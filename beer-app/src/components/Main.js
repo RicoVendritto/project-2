@@ -9,8 +9,6 @@ import Results from "./Results";
 
 //Api component
 import {
-  beerApi,
-  breweryApi,
   beerName,
   abvApi,
   ibuApi,
@@ -25,72 +23,70 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: '',
+      search: "",
+      results: "",
       apiDataLoaded: false
     };
   }
 
-  componentDidMount = async () => {
-    const result1 = await beerApi();
-    const result2 = await breweryApi();
-    const result3 = await beerName("bud");
-    const result4 = await abvApi(2);
-    const result5 = await ibuApi(2);
-    const result6 = await ebcApi(500);
-    const result7 = await randomBeer();
-    const result8 = await foodBeerApi("pork");
-    const result9 = await breweryCity("new_york");
-    const result0 = await breweryName("empire");
-    console.log(result1);
-    console.log(result2);
-    console.log(result3);
-    console.log(result4);
-    console.log(result5);
-    console.log(result6);
-    console.log(result7);
-    console.log(result8);
-    console.log(result9);
-    console.log(result0);
+  handleChange = e => {
+    console.log(e.target.value);
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({
+      [name]: value
+    })
   };
 
-  handleSubmit = async (e, search) => {
+  handleSubmit = async (e, key) => {
     e.preventDefault();
-    console.log("HELLO WORLD");
-    console.log(search);
-    switch (search) {
+    console.log(key);
+    const search = this.state.search;
+    let results = null;
+    switch (key) {
       case "bbn":
-        console.log("BBN");
+        results = await beerName(search);
+        this.submit(results);
         break;
       case "abv":
-        console.log("ABV");
+        results = await abvApi(search);
+        this.submit(results);
         break;
       case "ibv":
-        console.log("IBV");
+        results = await ibuApi(search);
+        this.submit(results);
         break;
       case "ebc":
-        console.log("EBC");
+        results = await ebcApi(search);
+        this.submit(results);
         break;
       case "rbg":
-        console.log("RBG");
-        const results = await randomBeer();
-        this.setState({
-          results,
-          apiDataLoaded: true
-        })
+        results = await randomBeer();
+        this.submit(results);
         break;
       case "baf":
-        console.log("BAF");
+        results = await foodBeerApi(search);
+        this.submit(results);
         break;
       case "brn":
-        console.log("BRN");
+        results = await breweryCity(search);
+        this.submit(results);
         break;
-      case "brg":
-        console.log("BRG");
+      case "brc":
+        results = await breweryName(search);
+        this.submit(results);
         break;
       default:
         console.log("Damn that went wrong man!");
     }
   };
+
+  submit = (results) => {
+    this.setState({
+      results,
+      apiDataLoaded: true
+    })
+  }
 
   render() {
     return (
@@ -100,7 +96,11 @@ class Main extends Component {
         <Route
           path="/search/:slug"
           render={props => (
-            <Search props={props} handleSubmit={this.handleSubmit} />
+            <Search
+              props={props}
+              handleSubmit={this.handleSubmit}
+              handleChange={this.handleChange}
+            />
           )}
         />
         {this.state.apiDataLoaded && <Results results={this.state.results} />}
