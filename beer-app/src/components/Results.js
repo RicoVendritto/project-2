@@ -29,7 +29,7 @@ const Results = props => {
               <h4>{result.tagline}</h4>
               <p>ABV {result.abv}%</p>
               <p>{result.description}</p>
-              <img src={result.image_url} alt="Beer Image" />
+              <img src={result.image_url} alt="Beer" />
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import React, { Component, Suspense } from "react";
 import { locationGet } from "../services/ApiCalls";
+import Weather from "./Weather";
 
 class Locator extends Component {
   constructor(props) {
@@ -50,14 +51,19 @@ class Locator extends Component {
         weatherInfo: results,
         iconURL: iconInfo
       });
-    }, 500);
+    }, 5000);
   };
 
   render() {
+    console.log(this.state.weatherInfo);
     return (
       <div>
         <Suspense fallback={<h1>Loading weather...</h1>}>
-          <img src={this.state.iconURL} />
+          <Weather
+            icon={this.state.iconURL}
+            weatherInfo={this.state.weatherInfo}
+            apiDataLoaded={this.state.apiDataLoaded}
+          />
         </Suspense>
       </div>
     );
