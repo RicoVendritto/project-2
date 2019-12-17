@@ -60,3 +60,8 @@ export async function breweryCity(city) {
   const results = await axios(`${apiBrewery}${cityBrewery}${city}`);
   return results;
 }
+
+export async function locationGet(lat, lon) {
+  const results = await axios(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=6a1a2778397877dac586c1ec24df6a18`);
+  return results;
+}
