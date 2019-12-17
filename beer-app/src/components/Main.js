@@ -83,12 +83,29 @@ class Main extends Component {
     }
   };
 
+  reset = () => {
+    console.log("It has been 5 seconds mate");
+    this.setState({
+      results: "",
+      key: "",
+      apiDataLoaded: false
+    });
+  };
+
   submit = (results, key) => {
     this.setState({
       results,
       key,
       apiDataLoaded: true
     });
+
+    setTimeout(function() {
+      this.setState({
+        results: "",
+        key: "",
+        apiDataLoaded: false
+      });
+    }, 3000);
   };
 
   render() {

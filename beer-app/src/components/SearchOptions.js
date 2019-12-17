@@ -5,36 +5,44 @@ const SearchOptions = () => {
   return (
     <div className="searchContainer">
       <div className="searchOptions">
-        <h2>Beer by Name</h2>
-        <Link to="/search/bbn">SEARCH</Link>
+        <Link to="/search/bbn">
+          <h2>Beer by Name</h2>
+        </Link>
       </div>
       <div className="searchOptions">
-        <h2>Alcohol by Volume</h2>
-        <Link to="/search/abv">SEARCH</Link>
+        <Link to="/search/abv">
+          <h2>Alcohol by Volume</h2>
+        </Link>
       </div>
       <div className="searchOptions">
-        <h2>International Bitterness Volume</h2>
-        <Link to="/search/ibv">SEARCH</Link>
+        <Link to="/search/ibv">
+          <h2>International Bitterness Volume</h2>
+        </Link>
       </div>
       <div className="searchOptions">
-        <h2>European Beer Convention Colour</h2>
-        <Link to="/search/ebc">SEARCH</Link>
+        <Link to="/search/ebc">
+          <h2>European Beer Convention Colour</h2>
+        </Link>
       </div>
       <div className="searchOptions">
-        <h2>Random Beer Generator</h2>
-        <Link to="/search/rbg">SEARCH</Link>
+        <Link to="/search/rbg">
+          <h2>Random Beer Generator</h2>
+        </Link>
       </div>
       <div className="searchOptions">
-        <h2>Beer and Food</h2>
-        <Link to="/search/baf">SEARCH</Link>
+        <Link to="/search/baf">
+          <h2>Beer and Food</h2>
+        </Link>
       </div>
       <div className="searchOptions">
-        <h2>Brewery by Name</h2>
-        <Link to="/search/brn">SEARCH</Link>
+        <Link to="/search/brn">
+          <h2>Brewery by Name</h2>
+        </Link>
       </div>
       <div className="searchOptions">
-        <h2>Brewery by City</h2>
-        <Link to="/search/brc">SEARCH</Link>
+        <Link to="/search/brc">
+          <h2>Brewery by City</h2>
+        </Link>
       </div>
     </div>
   );

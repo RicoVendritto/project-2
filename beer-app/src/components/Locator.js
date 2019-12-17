@@ -56,11 +56,6 @@ class Locator extends Component {
   render() {
     return (
       <div>
-        {/* {this.state.apiDataLoaded && (
-          <div>
-            <img src={this.state.iconURL} />
-          </div>
-        )} */}
         <Suspense fallback={<h1>Loading weather...</h1>}>
           <img src={this.state.iconURL} />
         </Suspense>
