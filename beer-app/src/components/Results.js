@@ -27,6 +27,7 @@ const Results = props => {
             <div key={index} className="indResults">
               <h2>{result.name}</h2>
               <h4>{result.tagline}</h4>
+              <p>ABV {result.abv}%</p>
               <p>{result.description}</p>
               <img src={result.image_url} alt="Beer Image" />
             </div>

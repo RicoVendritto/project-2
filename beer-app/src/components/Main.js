@@ -32,6 +32,7 @@ class Main extends Component {
   }
 
   handleChange = e => {
+    console.log(e);
     const name = e.target.name;
     let value = e.target.value;
     value = value.split(" ").join("_");
@@ -83,29 +84,12 @@ class Main extends Component {
     }
   };
 
-  reset = () => {
-    console.log("It has been 5 seconds mate");
-    this.setState({
-      results: "",
-      key: "",
-      apiDataLoaded: false
-    });
-  };
-
   submit = (results, key) => {
     this.setState({
       results,
       key,
       apiDataLoaded: true
     });
-
-    setTimeout(function() {
-      this.setState({
-        results: "",
-        key: "",
-        apiDataLoaded: false
-      });
-    }, 3000);
   };
 
   render() {

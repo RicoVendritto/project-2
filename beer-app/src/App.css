@@ -87,16 +87,27 @@ main {
 
 .searchContainer {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1vw;
+  row-gap: 1vh;
+  margin: 20vh 1vw;
 }
 
 .searchOptions {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: space-around;
   text-align: center;
   height: 25vh;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.searchOptions > a {
+  text-decoration: none;
+  color: white;
+  font-size: .8em;
 }
 
 form {
@@ -104,6 +115,10 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.results {
+  margin: 5vh auto 20vh auto;
 }
 
 .beerResults {
@@ -117,7 +132,7 @@ form {
 .indResults {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
 }
