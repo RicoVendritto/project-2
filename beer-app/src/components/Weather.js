@@ -1,6 +1,7 @@
 import React from "react";
 
-const Weather = () => {
+const Weather = (props) => {
+  console.log(props);
   return <div>WEATHER</div>;
 };
 
