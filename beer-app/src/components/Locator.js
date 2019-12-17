@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import { locationGet } from "../services/ApiCalls";
 
 class Locator extends Component {
@@ -12,7 +12,6 @@ class Locator extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.state.apiDataLoaded);
     let results = null;
     let icon = null;
     let iconInfo = null;
@@ -30,7 +29,6 @@ class Locator extends Component {
       console.log("Your current position is:");
       console.log(`Latitude : ${crd.latitude}`);
       console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
       getWeatherInfo(lat, lon);
     }
 
@@ -43,8 +41,6 @@ class Locator extends Component {
     async function getWeatherInfo(lat, lon) {
       results = await locationGet(lat, lon);
       icon = results.data.weather[0].icon;
-      console.log(results);
-      console.log(icon);
       iconInfo = `http://openweathermap.org/img/wn/${icon}@2x.png`;
     }
 
@@ -54,18 +50,20 @@ class Locator extends Component {
         weatherInfo: results,
         iconURL: iconInfo
       });
-    }, 5000);
+    }, 500);
   };
 
   render() {
     return (
       <div>
-        {this.state.apiDataLoaded && (
+        {/* {this.state.apiDataLoaded && (
           <div>
-            {/* <p>{this.state.weatherInfo.data.main.temp}</p> */}
             <img src={this.state.iconURL} />
           </div>
-        )}
+        )} */}
+        <Suspense fallback={<h1>Loading weather...</h1>}>
+          <img src={this.state.iconURL} />
+        </Suspense>
       </div>
     );
   }

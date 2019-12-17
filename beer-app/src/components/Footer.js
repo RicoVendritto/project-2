@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 
 //Custom components
-import Location from "./Location";
-import Locator from "./Test";
-import Weather from "./Weather";
+import Locator from "./Locator";
 
 class Footer extends Component {
   constructor(props) {
@@ -17,9 +15,9 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <div>FOOTER</div>
-        <Locator />
-        {/* {this.state.weatherInfoLoaded && <Weather weatherInfo={this.state.weatherInfo} />} */}
+        <Suspense fallback={<h1>Loading weather...</h1>}>
+          <Locator />
+        </Suspense>
       </footer>
     );
   }
