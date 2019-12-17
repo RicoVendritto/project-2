@@ -5,7 +5,6 @@ import { Route, Switch } from "react-router-dom";
 import SearchOptions from "./SearchOptions";
 import Search from "./Search";
 import Home from "./Home";
-import Results from "./Results";
 
 //Api component
 import {
@@ -26,7 +25,9 @@ class Main extends Component {
       search: "",
       results: "",
       apiDataLoaded: false,
-      key: ''
+      key: "",
+      weatherInfo: "",
+      weatherInfoLoaded: false
     };
   }
 
@@ -109,7 +110,6 @@ class Main extends Component {
             )}
           />
         </Switch>
-        
       </main>
     );
   }
