@@ -46,21 +46,35 @@ class Main extends Component {
     console.log(key);
     const search = this.state.search;
     let results = null;
+    let option = null;
+    let gtlt = null;
     switch (key) {
       case "bbn":
         results = await beerName(search);
         this.submit(results, key);
         break;
       case "abv":
-        results = await abvApi(search);
+        option = document.querySelector(".levelValue");
+        gtlt = document.querySelector(".valueHighLow");
+        option = option.options[option.selectedIndex].value;
+        gtlt = gtlt.options[gtlt.selectedIndex].value;
+        results = await abvApi(option, gtlt);
         this.submit(results, key);
         break;
       case "ibv":
-        results = await ibuApi(search);
+        option = document.querySelector(".levelValue");
+        gtlt = document.querySelector(".valueHighLow");
+        option = option.options[option.selectedIndex].value;
+        gtlt = gtlt.options[gtlt.selectedIndex].value;
+        results = await ibuApi(option, gtlt);
         this.submit(results, key);
         break;
       case "ebc":
-        results = await ebcApi(search);
+        option = document.querySelector(".levelValue");
+        gtlt = document.querySelector(".valueHighLow");
+        option = option.options[option.selectedIndex].value;
+        gtlt = gtlt.options[gtlt.selectedIndex].value;
+        results = await ebcApi(option, gtlt);
         this.submit(results, key);
         break;
       case "rbg":

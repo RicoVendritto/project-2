@@ -70,6 +70,7 @@ main {
   background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
   padding: 2vh;
   width: 13vw;
+  height: 9vh;
   border-radius: 5px;
   display: inline-block;
   border: none;

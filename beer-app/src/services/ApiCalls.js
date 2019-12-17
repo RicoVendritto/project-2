@@ -2,9 +2,9 @@ import axios from "axios";
 
 const apiUrl = "https://api.punkapi.com/v2/beers";
 const beerSearch = "?beer_name=";
-const abvSearch = "?abv_gt=";
-const ibuSearch = "?ibu_gt=";
-const ebcSearch = "?ebc_gt=";
+const abvSearch = "?abv_";
+const ibuSearch = "?ibu_";
+const ebcSearch = "?ebc_";
 const foodSearch = "?food=";
 const randomSearch = "https://api.punkapi.com/v2/beers/random";
 const apiBrewery = "https://api.openbrewerydb.org/breweries";
@@ -22,17 +22,18 @@ export async function beerName(beer_name) {
 }
 
 export async function abvApi(value, scale) {
-  const results = await axios(`${apiUrl}${abvSearch}${value}`);
+  console.log(`${apiUrl}${abvSearch}${scale}=${value}`);
+  const results = await axios(`${apiUrl}${abvSearch}${scale}=${value}`);
   return results;
 }
 
 export async function ibuApi(value, scale) {
-  const results = await axios(`${apiUrl}${ibuSearch}${value}`);
+  const results = await axios(`${apiUrl}${ibuSearch}${scale}=${value}`);
   return results;
 }
 
 export async function ebcApi(value, scale) {
-  const results = await axios(`${apiUrl}${ebcSearch}${value}`);
+  const results = await axios(`${apiUrl}${ebcSearch}${scale}=${value}`);
   return results;
 }
 

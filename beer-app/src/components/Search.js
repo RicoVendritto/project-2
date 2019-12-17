@@ -14,7 +14,7 @@ const Search = props => {
     case "abv":
       output = (
         <div>
-          <select>
+          <select className="levelValue">
             <option value="1">1</option>
             <option value="5">5</option>
             <option value="10">10</option>
@@ -22,7 +22,7 @@ const Search = props => {
             <option value="25">25</option>
             <option value="35">35</option>
           </select>
-          <select>
+          <select className="valueHighLow">
             <option value="lt">LT</option>
             <option value="gt">GT</option>
           </select>
@@ -33,7 +33,7 @@ const Search = props => {
     case "ibv":
       output = (
         <div>
-          <select>
+          <select className="levelValue">
             <option value="25">25</option>
             <option value="50">50</option>
             <option value="100">100</option>
@@ -41,7 +41,7 @@ const Search = props => {
             <option value="500">500</option>
             <option value="750">750</option>
           </select>
-          <select>
+          <select className="valueHighLow">
             <option value="lt">LT</option>
             <option value="gt">GT</option>
           </select>
@@ -52,7 +52,7 @@ const Search = props => {
     case "ebc":
       output = (
         <div>
-          <select>
+          <select className="levelValue">
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="200">200</option>
@@ -60,7 +60,7 @@ const Search = props => {
             <option value="400">400</option>
             <option value="500">500</option>
           </select>
-          <select>
+          <select className="valueHighLow">
             <option value="lt">LT</option>
             <option value="gt">GT</option>
           </select>
