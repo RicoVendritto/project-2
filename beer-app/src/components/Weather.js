@@ -13,7 +13,7 @@ const Weather = props => {
             {props.weatherInfo.data.main.temp > 20 ? (
               <p>Yeah! Awesome weather to drink beer</p>
             ) : (
-              <p>Okay, not that great, but sure, just have a beer!</p>
+              <p>Okay, not that great, but whatever, just have a <span>beer!</span></p>
             )}
           </div>
         </div>

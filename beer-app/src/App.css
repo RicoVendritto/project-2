@@ -147,9 +147,13 @@ form {
 .indResults {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  border: .5px solid black;
+  box-shadow: 5px 5px 10px black;
+  padding: 1vh 1vw;
+  border-radius: 10px;
 }
 
 .indResults img {
@@ -193,6 +197,17 @@ footer {
   align-items: center;
 }
 
+.weatherInfo > img {
+  height: 50px;
+}
+
 .weatherRec {
   letter-spacing: .2rem;
+}
+
+.weatherRec > p > span {
+  color: red;
+  font-weight: 900;
+  font-size: 1.2em;
+  text-transform: uppercase;
 }
