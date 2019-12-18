@@ -32,7 +32,6 @@ class Main extends Component {
   }
 
   handleChange = e => {
-    console.log(e);
     const name = e.target.name;
     let value = e.target.value;
     value = value.split(" ").join("_");
@@ -43,7 +42,6 @@ class Main extends Component {
 
   handleSubmit = async (e, key) => {
     e.preventDefault();
-    console.log(key);
     const search = this.state.search;
     let results = null;
     let option = null;
@@ -106,12 +104,24 @@ class Main extends Component {
     });
   };
 
+  reset = e => {
+    // e.preventDefault();
+    this.setState({
+      results: "",
+      key: "",
+      apiDataLoaded: false
+    });
+  };
+
   render() {
     return (
       <main>
         <Switch>
           <Route exact path="/home" render={() => <Home />} />
-          <Route path="/searchOptions" render={() => <SearchOptions />} />
+          <Route
+            path="/searchOptions"
+            render={() => <SearchOptions reset={this.reset} />}
+          />
           <Route
             path="/search/:slug"
             render={props => (
