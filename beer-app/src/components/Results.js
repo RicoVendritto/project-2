@@ -1,7 +1,6 @@
 import React from "react";
 
 const Results = props => {
-  console.log(props);
   const results = props.results.data;
   const slug = props.slug;
   const onerror = "http://pluspng.com/img-png/beer-bottle-png-hd-a-beer-bottle-beer-bottle-brown-foam-free-png-and-psd-650.jpg";
