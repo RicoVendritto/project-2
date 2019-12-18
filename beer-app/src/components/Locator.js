@@ -27,9 +27,9 @@ class Locator extends Component {
       let crd = pos.coords;
       let lat = crd.latitude;
       let lon = crd.longitude;
-      console.log("Your current position is:");
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
+      // console.log("Your current position is:");
+      // console.log(`Latitude : ${crd.latitude}`);
+      // console.log(`Longitude: ${crd.longitude}`);
       getWeatherInfo(lat, lon);
     }
 
@@ -43,19 +43,19 @@ class Locator extends Component {
       results = await locationGet(lat, lon);
       icon = results.data.weather[0].icon;
       iconInfo = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+      setStateFunction();
     }
 
-    setTimeout(() => {
+    const setStateFunction = () => {
       this.setState({
         apiDataLoaded: true,
         weatherInfo: results,
         iconURL: iconInfo
       });
-    }, 5000);
+    }
   };
 
   render() {
-    console.log(this.state.weatherInfo);
     return (
       <div>
         <Suspense fallback={<h1>Loading weather...</h1>}>
