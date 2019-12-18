@@ -5,7 +5,6 @@ import Results from "./Results";
 
 const Search = props => {
   const slug = props.props.match.params.slug;
-  console.log(slug);
   let output = null;
   switch (slug) {
     case "rbg":
