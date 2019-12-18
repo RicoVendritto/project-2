@@ -89,7 +89,13 @@ const Search = props => {
         <h2>SEARCH</h2>
         <div>{output}</div>
       </form>
-      {props.apiDataLoaded && <Results results={props.results} slug={slug} />}
+      {props.apiDataLoaded && (
+        <Results
+          favoriteSubmit={props.favoriteSubmit}
+          results={props.results}
+          slug={slug}
+        />
+      )}
     </div>
   );
 };

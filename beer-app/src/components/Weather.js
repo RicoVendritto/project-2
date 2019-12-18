@@ -7,7 +7,8 @@ const Weather = props => {
         <div className="weatherFooter">
           <div className="weatherInfo">
             <img src={props.icon} alt="weatherIcon" />
-            <p>{props.weatherInfo.data.main.temp} &#8451;</p>
+            <p className="temperatures">{props.weatherInfo.data.main.temp.toFixed(0)} &#8451;<span> // </span>
+            {((props.weatherInfo.data.main.temp * 9 / 5) + 32).toFixed(0)} &#8457;</p>
           </div>
           <div className="weatherRec">
             {props.weatherInfo.data.main.temp > 20 ? (

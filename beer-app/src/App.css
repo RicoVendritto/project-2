@@ -161,6 +161,10 @@ form {
   height: 30vh;
 }
 
+.indResults .far {
+  margin-top: 1vh;
+}
+
 footer {
   display: flex;
   flex-direction: row;
@@ -201,6 +205,10 @@ footer {
   height: 50px;
 }
 
+.temperatures {
+  text-align: right;
+}
+
 .weatherRec {
   letter-spacing: .2rem;
 }
@@ -210,4 +218,11 @@ footer {
   font-weight: 900;
   font-size: 1.2em;
   text-transform: uppercase;
+}
+
+::placeholder{
+  color: red;
+  font-weight: 400;
+  font-size: 1em;
+  text-align: left;  
 }

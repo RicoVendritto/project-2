@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import SearchOptions from "./SearchOptions";
 import Search from "./Search";
 import Home from "./Home";
+import Favourites from "./Favourites";
 
 //Api component
 import {
@@ -27,7 +28,9 @@ class Main extends Component {
       apiDataLoaded: false,
       key: "",
       weatherInfo: "",
-      weatherInfoLoaded: false
+      weatherInfoLoaded: false,
+      favouriteArray: [],
+      favourite: false
     };
   }
 
@@ -104,13 +107,25 @@ class Main extends Component {
     });
   };
 
-  reset = e => {
-    // e.preventDefault();
+  reset = () => {
     this.setState({
       results: "",
       key: "",
       apiDataLoaded: false
     });
+  };
+
+  favoriteSubmit = (e, result) => {
+    e.preventDefault();
+    console.log("Hello Favourite");
+    console.log(result);
+    let favouriteArray = this.state.favouriteArray;
+    favouriteArray.push(result);
+    this.setState({
+      favouriteArray,
+      favourite: true
+    });
+    console.log(favouriteArray);
   };
 
   render() {
@@ -131,6 +146,16 @@ class Main extends Component {
                 handleChange={this.handleChange}
                 results={this.state.results}
                 apiDataLoaded={this.state.apiDataLoaded}
+                favoriteSubmit={this.favoriteSubmit}
+              />
+            )}
+          />
+          <Route
+            path="/favourites"
+            render={() => (
+              <Favourites
+                favouriteArray={this.state.favouriteArray}
+                favourite={this.state.favourite}
               />
             )}
           />

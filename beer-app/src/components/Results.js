@@ -30,6 +30,7 @@ const Results = props => {
               <p>ABV {result.abv}%</p>
               <p>{result.description}</p>
               <img src={result.image_url} alt="Beer" onError={(e) => { e.target.onerror = null; e.target.src = { onerror } }} />
+              <i className="far fa-star fa-2x" onClick={(e) => props.favoriteSubmit(e, result)}></i>
             </div>
           ))}
         </div>
