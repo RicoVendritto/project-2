@@ -3,7 +3,7 @@ import FavResults from "./FavResults";
 
 const Favourites = props => {
   return (
-    <div>
+    <div className="favorites">
       {props.favourite ? (
         <FavResults
           results={props.favouriteArray}

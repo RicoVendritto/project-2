@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
 
-/* * {
-  border: .5px solid red;
-} */
+.App {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 header {
@@ -17,22 +18,31 @@ header {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 15vh;
+  height: 13vh;
   background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
   color: white;
 }
 
 header a {
   text-decoration: none;
+  color: black;
+  padding: 0.5vh 2vw;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+header a:hover {
+  background: black;
   color: white;
-  margin: 0 5vw;
+  padding: 0.5vh 2vw;
 }
 
 main {
-  margin: 15vh 0 0 0;
-  height: 70vw;
+  margin: 0;
+  height: 100vh;
 }
 
 .landingPage {
@@ -48,7 +58,7 @@ main {
 
 .logoLanding {
   height: 50vh;
-  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
   padding: 5vh;
   border-radius: 15px;
   box-shadow: 5px 5px 5px darkslategray;
@@ -67,7 +77,7 @@ main {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
   padding: 2vh;
   width: 13vw;
   height: 9vh;
@@ -80,28 +90,43 @@ main {
 }
 
 .buttonControl > button:hover {
-  background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);
+  background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
   letter-spacing: 1px;
   box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
   transition: all 0.4s ease 0s;
 }
 
-/* .searchContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 1vw;
-  row-gap: 1vh;
-  margin: 25vh 1vw;
-} */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.home > .hometext {
+  margin: 15vh auto;
+  width: 50vw;
+  text-align: center;
+  color: black;
+  background-color: rgba(240, 240, 240, 0.8);
+  border-radius: 15px;
+  padding: 1vh 1vw;
+}
 
 .searchContainer {
   display: flex;
+  align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
   background-image: url("https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
   background-position: center;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   background-position: fixed;
 }
 
@@ -111,18 +136,51 @@ main {
   justify-content: flex-end;
   align-items: space-around;
   text-align: center;
-  height: 50vh;
+  height: 60vh;
   min-width: 25vw;
   max-width: 35vw;
-  margin: 10vh 1vw;
+  margin: 5vh 2vw;
   background-color: black;
   border-radius: 15px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 5px 5px 5px black;
 }
 
 .searchOptions > a {
   text-decoration: none;
   color: white;
-  font-size: .8em;
+  font-size: 0.8em;
+}
+
+.option1 {
+  background-image: url("https://images.unsplash.com/photo-1464850415870-a401ff8b4818?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=664&q=80");
+}
+
+.option2 {
+  background-image: url("https://images.unsplash.com/photo-1505075106905-fb052892c116?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+}
+.option3 {
+  background-image: url("https://images.unsplash.com/photo-1510664691675-9c263a118102?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
+}
+.option4 {
+  background-image: url("https://images.unsplash.com/photo-1533661034880-690971041dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80");
+}
+.option5 {
+  background-image: url("https://images.unsplash.com/photo-1516458464372-eea4ab222b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80");
+}
+.option6 {
+  background-image: url("https://images.unsplash.com/photo-1549044466-404f19605ddc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+}
+.option7 {
+  background-image: url("https://images.unsplash.com/photo-1559526642-c3f001ea68ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80");
+}
+.option8 {
+  background-image: url("https://images.unsplash.com/photo-1524587253133-266042ff67d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
+}
+
+.search, .favorites  {
+  margin: 12vh 0;
 }
 
 form {
@@ -141,7 +199,7 @@ form {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1vw;
   row-gap: 1vh;
-  margin: 1vh 1vw 20vh 1vw;
+  margin: 15vh 1vw;
 }
 
 .indResults {
@@ -150,7 +208,7 @@ form {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  border: .5px solid black;
+  border: 0.5px solid black;
   box-shadow: 5px 5px 10px black;
   padding: 1vh 1vw;
   border-radius: 10px;
@@ -169,15 +227,14 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: fixed;
   width: 100vw;
   left: 0;
   bottom: 0;
-  margin: 5vh 0 0 0;
-  height: 20vh;
+  height: 13vh;
   background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
-  color: white;
+  color: black;
 }
 
 .weatherFooter {
@@ -210,7 +267,7 @@ footer {
 }
 
 .weatherRec {
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 .weatherRec > p > span {
@@ -218,11 +275,13 @@ footer {
   font-weight: 900;
   font-size: 1.2em;
   text-transform: uppercase;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 
-::placeholder{
+::placeholder {
   color: red;
   font-weight: 400;
   font-size: 1em;
-  text-align: left;  
+  text-align: left;
 }
+

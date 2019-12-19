@@ -16,7 +16,6 @@ class Locator extends Component {
     let results = null;
     let icon = null;
     let iconInfo = null;
-
     let options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -27,9 +26,6 @@ class Locator extends Component {
       let crd = pos.coords;
       let lat = crd.latitude;
       let lon = crd.longitude;
-      // console.log("Your current position is:");
-      // console.log(`Latitude : ${crd.latitude}`);
-      // console.log(`Longitude: ${crd.longitude}`);
       getWeatherInfo(lat, lon);
     }
 
@@ -52,7 +48,7 @@ class Locator extends Component {
         weatherInfo: results,
         iconURL: iconInfo
       });
-    }
+    };
   };
 
   render() {

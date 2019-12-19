@@ -123,6 +123,7 @@ class Main extends Component {
       for (let i = 0; i < favouriteArray.length; i++) {
         if (favouriteArray[i].id === result.id) {
           test = false;
+          break;
         }
       }
     }
