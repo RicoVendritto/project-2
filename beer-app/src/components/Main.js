@@ -117,15 +117,22 @@ class Main extends Component {
 
   favoriteSubmit = (e, result) => {
     e.preventDefault();
-    console.log("Hello Favourite");
-    console.log(result);
     let favouriteArray = this.state.favouriteArray;
-    favouriteArray.push(result);
+    let test = true;
+    if (favouriteArray.length > 0) {
+      for (let i = 0; i < favouriteArray.length; i++) {
+        if (favouriteArray[i].id === result.id) {
+          test = false;
+        }
+      }
+    }
+    if (test) {
+      favouriteArray.push(result);
+    }
     this.setState({
       favouriteArray,
       favourite: true
     });
-    console.log(favouriteArray);
   };
 
   render() {
@@ -156,6 +163,7 @@ class Main extends Component {
               <Favourites
                 favouriteArray={this.state.favouriteArray}
                 favourite={this.state.favourite}
+                favoriteSubmit={this.favoriteSubmit}
               />
             )}
           />

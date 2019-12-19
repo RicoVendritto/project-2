@@ -2,16 +2,18 @@ import React from "react";
 import FavResults from "./FavResults";
 
 const Favourites = props => {
-  console.log(props);
-  return <div>
-  {props.favourite ? <FavResults results={props.favouriteArray} /> : <div>FALSE</div>
-    }
-  </div>
-  // (
-  //   <div>
-  //     <FavResults results={props} />
-  //   </div>
-  // );
+  return (
+    <div>
+      {props.favourite ? (
+        <FavResults
+          results={props.favouriteArray}
+          favoriteSubmit={props.favoriteSubmit}
+        />
+      ) : (
+        <div>FALSE</div>
+      )}
+    </div>
+  );
 };
 
 export default Favourites;

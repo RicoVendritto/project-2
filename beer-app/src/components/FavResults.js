@@ -1,10 +1,6 @@
 import React from "react";
 
-const FavResults = (props) => {
-  console.log(props);
-  // return (
-  //   <div>FAVRESULTS</div>
-  // )
+const FavResults = props => {
   const results = props.results;
   return (
     <div className="beerResults">
@@ -14,10 +10,7 @@ const FavResults = (props) => {
           <h4>{result.tagline}</h4>
           <p>ABV {result.abv}%</p>
           <p>{result.description}</p>
-          <img
-            src={result.image_url}
-            alt="Beer"
-          />
+          <img src={result.image_url} alt="Beer" />
           <i
             className="far fa-star fa-2x"
             onClick={e => props.favoriteSubmit(e, result)}
