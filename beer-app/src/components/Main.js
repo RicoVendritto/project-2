@@ -6,6 +6,7 @@ import SearchOptions from "./SearchOptions";
 import Search from "./Search";
 import Home from "./Home";
 import Favourites from "./Favourites";
+import Fallback from "./Fallback";
 
 //Api component
 import {
@@ -168,6 +169,7 @@ class Main extends Component {
               />
             )}
           />
+          <Route path="/" render={() => <Fallback />} />
         </Switch>
       </main>
     );

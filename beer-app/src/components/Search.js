@@ -73,6 +73,7 @@ const Search = props => {
     case "brc":
       output = (
         <input
+          className="inputField"
           type="text"
           name="search"
           onChange={props.handleChange}

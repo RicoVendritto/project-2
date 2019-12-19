@@ -9,8 +9,8 @@ const Weather = props => {
             <img src={props.icon} alt="weatherIcon" />
             <p className="temperatures">
               {props.weatherInfo.data.main.temp.toFixed(0)} &#8451;
-              <span> || </span>
-              {((props.weatherInfo.data.main.temp * 9) / 5 + 32).toFixed(0)}{" "}
+              <span> // </span>
+              {((props.weatherInfo.data.main.temp * 9) / 5 + 32).toFixed(0)}
               &#8457;
             </p>
           </div>

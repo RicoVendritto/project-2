@@ -23,6 +23,7 @@ header {
   height: 13vh;
   background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
   color: white;
+  box-shadow: 5px 5px 5px black;
 }
 
 header a {
@@ -43,6 +44,7 @@ header a:hover {
 main {
   margin: 0;
   height: 100vh;
+  background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%);
 }
 
 .landingPage {
@@ -115,6 +117,7 @@ main {
   background-color: rgba(240, 240, 240, 0.8);
   border-radius: 15px;
   padding: 1vh 1vw;
+  box-shadow: 5px 5px 5px rgba(240, 240, 240, 0.5);
 }
 
 .searchContainer {
@@ -179,8 +182,13 @@ main {
   background-image: url("https://images.unsplash.com/photo-1524587253133-266042ff67d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
 }
 
-.search, .favorites  {
+.search {
   margin: 12vh 0;
+}
+
+.favorites {
+  margin: 12vh 0;
+  padding: 5vh 0 0 0 ;
 }
 
 form {
@@ -190,16 +198,30 @@ form {
   align-items: center;
 }
 
+.inputField {
+  border: none;
+  height: auto;
+  width: 15vw;
+  font-size: 2.5em;
+  font-weight: 900;
+  border-bottom: 0.5px solid lightslategrey;
+}
+
+::placeholder {
+  color: lightgray;
+  text-align: left;
+  text-justify: center;
+}
+
 .results {
   margin: 5vh auto 20vh auto;
 }
 
 .beerResults {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 1vw;
-  row-gap: 1vh;
-  margin: 15vh 1vw;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .indResults {
@@ -207,11 +229,22 @@ form {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-  border: 0.5px solid black;
-  box-shadow: 5px 5px 10px black;
+  text-align: center;
+  min-height: 50vh;
+  height: 70vh;
+  max-height: 90vh;
+  min-width: 25vw;
+  max-width: 35vw;
+  margin: 0 2vw;
   padding: 1vh 1vw;
-  border-radius: 10px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 5px 5px 5px black;
+}
+
+.indResults h2, .indResults h4, .indResults p {
+  margin: 0;
+  padding: 0;
 }
 
 .indResults img {
@@ -235,6 +268,7 @@ footer {
   height: 13vh;
   background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
   color: black;
+  box-shadow: -5px -5px 5px black;
 }
 
 .weatherFooter {
@@ -256,6 +290,7 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .weatherInfo > img {
@@ -264,6 +299,11 @@ footer {
 
 .temperatures {
   text-align: right;
+}
+
+.temperatures > span {
+  color: red;
+  font-weight: 900;
 }
 
 .weatherRec {
@@ -277,11 +317,3 @@ footer {
   text-transform: uppercase;
   text-shadow: 0.5px 0.5px 0.5px black;
 }
-
-::placeholder {
-  color: red;
-  font-weight: 400;
-  font-size: 1em;
-  text-align: left;
-}
-

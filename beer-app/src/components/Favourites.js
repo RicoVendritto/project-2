@@ -3,14 +3,23 @@ import FavResults from "./FavResults";
 
 const Favourites = props => {
   return (
-    <div className="favorites">
+    <div>
       {props.favourite ? (
-        <FavResults
-          results={props.favouriteArray}
-          favoriteSubmit={props.favoriteSubmit}
-        />
+        <div className="favorites">
+          <FavResults
+            results={props.favouriteArray}
+            favoriteSubmit={props.favoriteSubmit}
+          />
+        </div>
       ) : (
-        <div>FALSE</div>
+        <div className="home">
+          <div className="hometext">
+            <h1>What about beer?</h1>
+            <p>
+              You've got no favourite yet!
+            </p>
+          </div>
+        </div>
       )}
     </div>
   );
