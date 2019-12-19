@@ -1,6 +1,7 @@
 import React from "react";
 
 const FavResults = props => {
+  console.log(props);
   const results = props.results;
   return (
     <div className="beerResults">
@@ -12,7 +13,7 @@ const FavResults = props => {
           <p>{result.description}</p>
           <img src={result.image_url} alt="Beer" />
           <i
-            className="far fa-star fa-2x"
+            className={results.favourite ? "far fa-star fa-2x" : "far fa-star fa-2x gold"}
             onClick={e => props.favoriteSubmit(e, result)}
           ></i>
         </div>

@@ -17,6 +17,9 @@ class App extends Component {
 
   ageValidation = (e, boolean) => {
     e.preventDefault();
+    if (!boolean) {
+      window.open("http://www.nick.com");
+    }
     this.setState({
       ageCheck: boolean
     });

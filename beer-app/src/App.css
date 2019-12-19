@@ -45,6 +45,9 @@ main {
   margin: 0;
   height: 100vh;
   background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%);
+  background-image: url("https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+  background-position: center;
+  background-size: cover;
 }
 
 .landingPage {
@@ -60,10 +63,19 @@ main {
 
 .logoLanding {
   height: 50vh;
-  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  color: black;
+  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
   padding: 5vh;
   border-radius: 15px;
   box-shadow: 5px 5px 5px darkslategray;
+  transition: all 0.4s ease 0s;
+}
+
+.logoLanding:hover {
+  background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
+  transition: all 0.4s ease 0s;
+  color:white;
+  transform: scale(1.1);
 }
 
 .buttonControl {
@@ -188,7 +200,7 @@ main {
 
 .favorites {
   margin: 12vh 0;
-  padding: 5vh 0 0 0 ;
+  padding: 5vh 0 0 0;
 }
 
 form {
@@ -217,14 +229,32 @@ form {
   margin: 5vh auto 20vh auto;
 }
 
-.beerResults {
+.beerResults, .breweryResults {
   display: flex;
   align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
 }
 
-.indResults {
+.breweryResults > .indResults {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 30vh;
+  height: 40vh;
+  max-height: 50vh;
+  min-width: 25vw;
+  max-width: 35vw;
+  margin: 1vh 2vw;
+  padding: 1vh 1vw;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 5px 5px 5px black;
+}
+
+.beerResults > .indResults {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -235,14 +265,16 @@ form {
   max-height: 90vh;
   min-width: 25vw;
   max-width: 35vw;
-  margin: 0 2vw;
+  margin: 1vh 2vw;
   padding: 1vh 1vw;
   border-radius: 15px;
   background-color: white;
   box-shadow: 5px 5px 5px black;
 }
 
-.indResults h2, .indResults h4, .indResults p {
+.indResults h2,
+.indResults h4,
+.indResults p {
   margin: 0;
   padding: 0;
 }
@@ -254,6 +286,10 @@ form {
 
 .indResults .far {
   margin-top: 1vh;
+}
+
+.indResults .gold {
+  color: goldenrod;
 }
 
 footer {

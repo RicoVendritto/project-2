@@ -129,6 +129,8 @@ class Main extends Component {
       }
     }
     if (test) {
+      
+      result["favourite"] = true;
       favouriteArray.push(result);
     }
     this.setState({
