@@ -266,11 +266,8 @@ form {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  min-height: 30vh;
   height: 40vh;
-  max-height: 50vh;
-  min-width: 25vw;
-  max-width: 35vw;
+  min-width: 40vw;
   margin: 0vh 1vw;
   padding: 1vh 1vw;
   border-radius: 15px;
@@ -284,16 +281,41 @@ form {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  min-height: 50vh;
   height: 60vh;
-  max-height: 90vh;
-  min-width: 25vw;
-  max-width: 35vw;
+  min-width: 50vw;
   margin: 0vh 1vw;
   padding: 1vh 1vw;
   border-radius: 15px;
   background-color: white;
   box-shadow: 5px 5px 5px black;
+}
+
+.beerResults > .indResult {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 60vh;
+  margin: 0vh 1vw;
+  padding: 1vh 1vw;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 5px 5px 5px black;
+}
+
+.indResult img {
+  overflow: hidden;
+  height: 30vh;
+}
+
+.indResult h2,
+.indResult h4,
+.indResult p {
+  margin: 0;
+  padding: 0;
 }
 
 .indResults h2,
@@ -308,11 +330,13 @@ form {
   height: 30vh;
 }
 
-.indResults .far {
+.indResults .far,
+.indResult .far {
   margin-top: 1vh;
 }
 
-.indResults .gold {
+.indResults .gold,
+.indResult .gold {
   color: goldenrod;
 }
 
@@ -343,6 +367,7 @@ footer {
 .weatherFooter p {
   margin: 0;
   padding: 0;
+  font-weight: 700;
 }
 
 .weatherInfo {
@@ -360,7 +385,7 @@ footer {
 .temperatures {
   text-align: right;
   font-weight: 500;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 .temperatures > span {
@@ -378,4 +403,94 @@ footer {
   font-size: 1.2em;
   text-transform: uppercase;
   text-shadow: 0.5px 0.5px 0.5px black;
+}
+
+/* Most common screen sizes according codecademy: https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/screen-sizes.png */
+
+@media only screen and (max-width: 480px) {
+  .landingPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logoLanding {
+    width: 80vw;
+  }
+
+  .buttonControl {
+    width: 80vw;
+  }
+
+  .buttonControl > button {
+    width: 30vw;
+  }
+
+  .weatherRec {
+    width: 90vw;
+    text-align: center;
+  }
+
+  .search {
+    width: 100vw;
+  }
+
+  .search select,
+  .search input,
+  .search button {
+    box-shadow: inset 0px 1px 0px 0px #fff6af;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color: #ffec64;
+    border-radius: 5px;
+    border: 1px solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+  }
+
+  .search select:hover,
+  .search input:hover,
+  .search button:hover {
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color: #ffab23;
+  }
+
+  .search select:active,
+  .search input:active,
+  .search button:active {
+    position: relative;
+    top: 1px;
+  }
+
+  .beerResults {
+    height: 60vh;
+  }
+
+  .beerResults > .indResults,
+  .beerResults > .indResult {
+    height: 50vh;
+  }
+
+  .beerResults > .indResult {
+    width: 90vw;
+    margin: 0 5vw;
+  }
+
+  .indResults p,
+  .indResult p {
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 1024px) {
 }

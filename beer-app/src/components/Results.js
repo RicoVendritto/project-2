@@ -24,7 +24,7 @@ const Results = props => {
       ) : (
         <div className="beerResults">
           {results.map((result, index) => (
-            <div key={index} className="indResults">
+            <div key={index} className={results.length <= 1 ? "indResult" : "indResults"}>
               <h2>{result.name}</h2>
               <h4>{result.tagline}</h4>
               <p>ABV {result.abv}%</p>
