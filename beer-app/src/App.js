@@ -40,7 +40,7 @@ class App extends Component {
         )}
       </div>
       <div className="ErrorSize">
-        <h4>Sorry, this website only works on screens wider than 400px</h4>
+        <h4>Sorry, this website only works on screens wider than 350px</h4>
         </div>
         </div>
     );
