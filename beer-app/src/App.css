@@ -538,6 +538,17 @@ footer {
   .output:hover .beerInfo {
     visibility: hidden;
   }
+
+  .weatherFooter p {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: .75em;
+  }
+
+  .weatherRec {
+    letter-spacing: 0rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
