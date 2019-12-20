@@ -160,6 +160,30 @@ main {
   background-position: fixed;
 }
 
+.output .beerInfo {
+  visibility: hidden;
+  max-width: 30vw;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.57);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  left: 10vw;
+  top: 15vh;
+  font-size: 1.5em;
+  z-index: 5;
+}
+
+.output:hover .beerInfo {
+  visibility: visible;
+}
+
+.output .beerInfo img {
+  height: 30vh;
+}
+
 .beerResults {
   display: flex;
   align-items: center;
@@ -167,7 +191,7 @@ main {
   overflow-y: hidden;
   background-position: center;
   background-size: cover;
-  height: 80vh;
+  height: 70vh;
   width: 100vw;
   background-position: fixed;
 }
@@ -201,7 +225,7 @@ main {
   box-shadow: 5px 5px 5px black;
 }
 
-.searchOptions > a {
+.searchContainer > a {
   text-decoration: none;
   color: white;
   font-size: 0.8em;
@@ -235,6 +259,7 @@ main {
 
 .search {
   margin: 12vh 0;
+  width: 100vw;
 }
 
 form {
@@ -248,9 +273,9 @@ form {
   border: none;
   height: auto;
   width: 15vw;
-  font-size: 2.5em;
-  font-weight: 900;
-  background-color: lightgray;
+  font-size: 2em;
+  font-weight: 600;
+  background-color: rgb(235, 235, 235);
   border-bottom: 0.5px solid lightslategrey;
 }
 
@@ -281,7 +306,7 @@ form {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 60vh;
+  height: 55vh;
   min-width: 50vw;
   margin: 0vh 1vw;
   padding: 1vh 1vw;
