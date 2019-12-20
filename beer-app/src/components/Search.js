@@ -42,7 +42,7 @@ const Search = props => {
             a gauge of beer's bitterness. What IBUs measure are the parts per
             million of isohumulone found in a beer. Isohumulone is the acid
             found in hops that gives beer its bitter bite.
-            <img src="https://www.julesbartow.com/Electrician/Industrial/Brewery/InternationalBitternessUnits_%28IBU%29_Guide.png" />
+            <img src="https://www.julesbartow.com/Electrician/Industrial/Brewery/InternationalBitternessUnits_%28IBU%29_Guide.png" alt="IBV Explanation" />
           </span>
           <select className="levelValue">
             <option value="25">25</option>
@@ -65,7 +65,7 @@ const Search = props => {
         <div>
           <span className="beerInfo">
           The colour of beer is measured in EBCs. EBC stands for European Brewery Convention.
-            <img src="https://i.pinimg.com/originals/59/60/7e/59607ee85d8857f40de3abc84d3564e4.png" />
+            <img src="https://i.pinimg.com/originals/59/60/7e/59607ee85d8857f40de3abc84d3564e4.png" alt="EBC Explanation"/>
           </span>
           <select className="levelValue">
             <option value="50">50</option>
