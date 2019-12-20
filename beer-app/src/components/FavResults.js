@@ -1,7 +1,6 @@
 import React from "react";
 
 const FavResults = props => {
-  console.log(props);
   const results = props.results;
   return (
     <div className="beerResults">

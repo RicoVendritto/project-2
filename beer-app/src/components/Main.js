@@ -129,13 +129,22 @@ class Main extends Component {
       }
     }
     if (test) {
-      
       result["favourite"] = true;
       favouriteArray.push(result);
     }
     this.setState({
       favouriteArray,
       favourite: true
+    });
+  };
+
+  favoriteDelete = (e, result) => {
+    e.preventDefault();
+    const currentArray = this.state.favouriteArray.filter(
+      fav => fav.id !== result.id
+    );
+    this.setState({
+      favouriteArray: currentArray
     });
   };
 
@@ -167,7 +176,7 @@ class Main extends Component {
               <Favourites
                 favouriteArray={this.state.favouriteArray}
                 favourite={this.state.favourite}
-                favoriteSubmit={this.favoriteSubmit}
+                favoriteSubmit={this.favoriteDelete}
               />
             )}
           />
