@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
 
+.searchContainer::-webkit-scrollbar {
+  width: 0 !important;
+}
+.beerResults::-webkit-scrollbar {
+  width: 0 !important;
+}
+.breweryResults::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 .App {
   margin: 0;
   padding: 0;
@@ -42,12 +52,16 @@ header a:hover {
 }
 
 main {
+  position: fixed;
+  left: 0;
+  top: 0;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%);
   background-image: url("https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
   background-position: center;
   background-size: cover;
+  z-index: -2;
 }
 
 .landingPage {
@@ -74,7 +88,7 @@ main {
 .logoLanding:hover {
   background: linear-gradient(90deg, #fdbb2d 0%, #22c1c3 100%);
   transition: all 0.4s ease 0s;
-  color:white;
+  color: white;
   transform: scale(1.1);
 }
 
@@ -119,6 +133,7 @@ main {
   background-position: center;
   background-size: cover;
   height: 100vh;
+  width: 100vw;
 }
 
 .home > .hometext {
@@ -132,15 +147,39 @@ main {
   box-shadow: 5px 5px 5px rgba(240, 240, 240, 0.5);
 }
 
-.searchContainer {
+.searchContainer,
+.favorites {
   display: flex;
   align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
-  background-image: url("https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
   background-position: center;
   background-size: cover;
   height: 100vh;
+  width: 100vw;
+  background-position: fixed;
+}
+
+.beerResults {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  width: 100vw;
+  background-position: fixed;
+}
+
+.breweryResults {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-position: center;
+  background-size: cover;
+  height: 60vh;
   width: 100vw;
   background-position: fixed;
 }
@@ -154,7 +193,7 @@ main {
   height: 60vh;
   min-width: 25vw;
   max-width: 35vw;
-  margin: 5vh 2vw;
+  margin: 15vh 2vw;
   background-color: black;
   border-radius: 15px;
   background-position: center;
@@ -198,11 +237,6 @@ main {
   margin: 12vh 0;
 }
 
-.favorites {
-  margin: 12vh 0;
-  padding: 5vh 0 0 0;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -216,28 +250,18 @@ form {
   width: 15vw;
   font-size: 2.5em;
   font-weight: 900;
+  background-color: lightgray;
   border-bottom: 0.5px solid lightslategrey;
 }
 
 ::placeholder {
   color: lightgray;
   text-align: left;
-  text-justify: center;
-}
-
-.results {
-  margin: 5vh auto 20vh auto;
-}
-
-.beerResults, .breweryResults {
-  display: flex;
-  align-items: center;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }
 
 .breweryResults > .indResults {
   display: flex;
+  white-space: hidden;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -247,7 +271,7 @@ form {
   max-height: 50vh;
   min-width: 25vw;
   max-width: 35vw;
-  margin: 1vh 2vw;
+  margin: 0vh 1vw;
   padding: 1vh 1vw;
   border-radius: 15px;
   background-color: white;
@@ -261,11 +285,11 @@ form {
   align-items: center;
   text-align: center;
   min-height: 50vh;
-  height: 70vh;
+  height: 60vh;
   max-height: 90vh;
   min-width: 25vw;
   max-width: 35vw;
-  margin: 1vh 2vw;
+  margin: 0vh 1vw;
   padding: 1vh 1vw;
   border-radius: 15px;
   background-color: white;
@@ -335,6 +359,8 @@ footer {
 
 .temperatures {
   text-align: right;
+  font-weight: 500;
+  letter-spacing: .1em;
 }
 
 .temperatures > span {

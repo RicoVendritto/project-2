@@ -17,7 +17,7 @@ const Results = props => {
               <p>
                 {result.phone} | {result.postal_code}
               </p>
-              <a href={result.website_url}>Brewery Website</a>
+              <a target="_blank" href={result.website_url}>Brewery Website</a>
             </div>
           ))}
         </div>
