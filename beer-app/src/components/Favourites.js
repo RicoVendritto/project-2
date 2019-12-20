@@ -16,7 +16,7 @@ const Favourites = props => {
           <div className="hometext">
             <h1>What about beer?</h1>
             <p>
-              You've got no favourite yet!
+              You've got no favorites yet!
             </p>
           </div>
         </div>
