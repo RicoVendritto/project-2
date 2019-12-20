@@ -15,6 +15,10 @@
   padding: 0;
 }
 
+.ErrorSize {
+  visibility: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -431,6 +435,24 @@ footer {
 }
 
 /* Most common screen sizes according codecademy: https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/screen-sizes.png */
+
+@media only screen and (max-width: 400px) {
+  .App {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
+  .ErrorSize {
+    visibility: visible;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
 
 @media only screen and (max-width: 480px) {
   .landingPage {

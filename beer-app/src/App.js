@@ -27,6 +27,7 @@ class App extends Component {
 
   render() {
     return (
+      <div>
       <div className="App">
         {!this.state.ageCheck ? (
           <Landing ageValidation={this.ageValidation} />
@@ -38,6 +39,10 @@ class App extends Component {
           </div>
         )}
       </div>
+      <div className="ErrorSize">
+        <h4>Sorry, this website only works on screens wider than 400px</h4>
+        </div>
+        </div>
     );
   }
 }
